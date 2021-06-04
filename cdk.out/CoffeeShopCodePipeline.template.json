@@ -1,0 +1,2784 @@
+{
+  "Resources": {
+    "CoffeeShopVPC7F853AEE": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/Resource"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1Subnet0AE298EB": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2a",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/Subnet"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1RouteTable39847DED": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1RouteTableAssociation057862C7": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1RouteTable39847DED"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1Subnet0AE298EB"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1DefaultRoute3B62852A": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1RouteTable39847DED"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "CoffeeShopVPCIGWDD7B66A5"
+        }
+      },
+      "DependsOn": [
+        "CoffeeShopVPCVPCGWD7E231DB"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1EIPCF46CEB5": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/EIP"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet1NATGatewayAA57E8BE": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "CoffeeShopVPCPublicSubnet1EIPCF46CEB5",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1Subnet0AE298EB"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/NATGateway"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet2SubnetA2BB6851": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.32.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2b",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2/Subnet"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet2RouteTable5E85DE6C": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet2RouteTableAssociation30A841C0": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet2RouteTable5E85DE6C"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPublicSubnet2SubnetA2BB6851"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet2DefaultRouteD25873E9": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet2RouteTable5E85DE6C"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "CoffeeShopVPCIGWDD7B66A5"
+        }
+      },
+      "DependsOn": [
+        "CoffeeShopVPCVPCGWD7E231DB"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet3Subnet85C1D3B3": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.64.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2c",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3/Subnet"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet3RouteTable70231C4E": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet3RouteTableAssociationFACA3AC4": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet3RouteTable70231C4E"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPublicSubnet3Subnet85C1D3B3"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPublicSubnet3DefaultRoute168AB1B9": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPublicSubnet3RouteTable70231C4E"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "CoffeeShopVPCIGWDD7B66A5"
+        }
+      },
+      "DependsOn": [
+        "CoffeeShopVPCVPCGWD7E231DB"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet1Subnet4B6571FA": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.96.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2a",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1/Subnet"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet1RouteTable16221DCB": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet1RouteTableAssociationBB0F0D1C": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet1RouteTable16221DCB"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet1Subnet4B6571FA"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet1DefaultRoute0C2B03ED": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet1RouteTable16221DCB"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1NATGatewayAA57E8BE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet2Subnet9CA4B673": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.128.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2b",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2/Subnet"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet2RouteTable26F4738B": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet2RouteTableAssociation77AB416C": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet2RouteTable26F4738B"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet2Subnet9CA4B673"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet2DefaultRouteC5E52EA4": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet2RouteTable26F4738B"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1NATGatewayAA57E8BE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet3Subnet7ECD5C8A": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.160.0/19",
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "AvailabilityZone": "us-west-2c",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3/Subnet"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet3RouteTableAF7CE3D6": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3/RouteTable"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet3RouteTableAssociation18B9FCAF": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet3RouteTableAF7CE3D6"
+        },
+        "SubnetId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet3Subnet7ECD5C8A"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3/RouteTableAssociation"
+      }
+    },
+    "CoffeeShopVPCPrivateSubnet3DefaultRoute1CD32410": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "CoffeeShopVPCPrivateSubnet3RouteTableAF7CE3D6"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "CoffeeShopVPCPublicSubnet1NATGatewayAA57E8BE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3/DefaultRoute"
+      }
+    },
+    "CoffeeShopVPCIGWDD7B66A5": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "CoffeeShopCodePipeline/CoffeeShopVPC"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/IGW"
+      }
+    },
+    "CoffeeShopVPCVPCGWD7E231DB": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        },
+        "InternetGatewayId": {
+          "Ref": "CoffeeShopVPCIGWDD7B66A5"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopVPC/VPCGW"
+      }
+    },
+    "Repository22E53BBD": {
+      "Type": "AWS::ECR::Repository",
+      "Properties": {
+        "LifecyclePolicy": {
+          "LifecyclePolicyText": "{\"rules\":[{\"rulePriority\":1,\"selection\":{\"tagStatus\":\"any\",\"countType\":\"sinceImagePushed\",\"countNumber\":30,\"countUnit\":\"days\"},\"action\":{\"type\":\"expire\"}}]}"
+        },
+        "RepositoryName": "solid-humank-coffeeshop/orders-web"
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/Repository/Resource"
+      }
+    },
+    "RepositoryCoffeeShopCodePipelineCoffeeShopPipeline2276F00DSourceEventRule367A45AD": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "EventPattern": {
+          "source": [
+            "aws.ecr"
+          ],
+          "detail-type": [
+            "AWS API Call via CloudTrail"
+          ],
+          "detail": {
+            "requestParameters": {
+              "repositoryName": [
+                {
+                  "Ref": "Repository22E53BBD"
+                }
+              ],
+              "imageTag": [
+                "latest"
+              ]
+            },
+            "eventName": [
+              "PutImage"
+            ]
+          }
+        },
+        "State": "ENABLED",
+        "Targets": [
+          {
+            "Arn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":codepipeline:us-west-2:584518143473:",
+                  {
+                    "Ref": "CoffeeShopPipeline5BE09743"
+                  }
+                ]
+              ]
+            },
+            "Id": "Target0",
+            "RoleArn": {
+              "Fn::GetAtt": [
+                "CoffeeShopPipelineEventsRole899656A8",
+                "Arn"
+              ]
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/Repository/CoffeeShopCodePipelineCoffeeShopPipeline2276F00DSourceEventRule/Resource"
+      }
+    },
+    "CodeBuildIamRoleAC16D411": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "codebuild.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AWSLambdaFullAccess"
+              ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonAPIGatewayAdministrator"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CodeBuildIamRole/Resource"
+      }
+    },
+    "CodeBuildIamRoleDefaultPolicy1ADB8698": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "cloudformation:*",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "iam:*",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "ecr:GetAuthorizationToken",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "ecr:*",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "Repository22E53BBD",
+                        "Arn"
+                      ]
+                    },
+                    "*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "CoffeeShopBucketEF3ADD55",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopBucketEF3ADD55",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopBucketEF3ADD55",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopBucketEF3ADD55",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopBucketEF3ADD55",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopBucketEF3ADD55",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopBucketEF3ADD55",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":logs:us-west-2:584518143473:log-group:/aws/codebuild/",
+                      {
+                        "Ref": "CodeBuildProject4B91CF3F"
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":logs:us-west-2:584518143473:log-group:/aws/codebuild/",
+                      {
+                        "Ref": "CodeBuildProject4B91CF3F"
+                      },
+                      ":*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "codebuild:CreateReportGroup",
+                "codebuild:CreateReport",
+                "codebuild:UpdateReport",
+                "codebuild:BatchPutTestCases",
+                "codebuild:BatchPutCodeCoverages"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":codebuild:us-west-2:584518143473:report-group/",
+                    {
+                      "Ref": "CodeBuildProject4B91CF3F"
+                    },
+                    "-*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CodeBuildIamRoleDefaultPolicy1ADB8698",
+        "Roles": [
+          {
+            "Ref": "CodeBuildIamRoleAC16D411"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CodeBuildIamRole/DefaultPolicy/Resource"
+      }
+    },
+    "CoffeeShopBucketEF3ADD55": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "coffeeshop-49k0gj"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopBucket/Resource"
+      }
+    },
+    "CodeBuildProject4B91CF3F": {
+      "Type": "AWS::CodeBuild::Project",
+      "Properties": {
+        "Artifacts": {
+          "Type": "NO_ARTIFACTS"
+        },
+        "Environment": {
+          "ComputeType": "BUILD_GENERAL1_SMALL",
+          "Image": "aws/codebuild/amazonlinux2-x86_64-standard:1.0",
+          "ImagePullCredentialsType": "CODEBUILD",
+          "PrivilegedMode": true,
+          "Type": "LINUX_CONTAINER"
+        },
+        "ServiceRole": {
+          "Fn::GetAtt": [
+            "CodeBuildIamRoleAC16D411",
+            "Arn"
+          ]
+        },
+        "Source": {
+          "BuildSpec": {
+            "Fn::Join": [
+              "",
+              [
+                "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"install\": {\n      \"runtime-versions\": {\n        \"java\": \"corretto11\"\n      }\n    },\n    \"build\": {\n      \"commands\": [\n        \"echo \\\"Build all modules\\\"\",\n        \"echo \\\"Run Maven clean install to have all the required jars in local .m2 repository\\\"\",\n        \"cd sources/coffeeshop\",\n        \"mvn clean install -Dmaven.test.skip=true\"\n      ]\n    },\n    \"post_build\": {\n      \"commands\": [\n        \"TAG=${CODEBUILD_RESOLVED_SOURCE_VERSION}\",\n        \"LATEST=\\\"latest\\\"\",\n        \"echo \\\"Pack web modules into docker and push to ECR\\\"\",\n        \"echo \\\"ECR login now\\\"\",\n        \"$(aws ecr get-login --no-include-email)\",\n        \"pwd\",\n        \"echo \\\"build orders-web docker image\\\"\",\n        \"cd orders-web\",\n        \"mvn package -Dmaven.test.skip=true\",\n        \"docker build -f src/main/docker/Dockerfile.jvm -t ",
+                {
+                  "Fn::Select": [
+                    4,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".dkr.ecr.",
+                {
+                  "Fn::Select": [
+                    3,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                },
+                "/",
+                {
+                  "Ref": "Repository22E53BBD"
+                },
+                ":$LATEST .\",\n        \"docker images\",\n        \"docker tag ",
+                {
+                  "Fn::Select": [
+                    4,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".dkr.ecr.",
+                {
+                  "Fn::Select": [
+                    3,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                },
+                "/",
+                {
+                  "Ref": "Repository22E53BBD"
+                },
+                ":$LATEST ",
+                {
+                  "Fn::Select": [
+                    4,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".dkr.ecr.",
+                {
+                  "Fn::Select": [
+                    3,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                },
+                "/",
+                {
+                  "Ref": "Repository22E53BBD"
+                },
+                ":$TAG\",\n        \"echo \\\"Pushing Orders-web\\\"\",\n        \"docker images\",\n        \"docker push ",
+                {
+                  "Fn::Select": [
+                    4,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".dkr.ecr.",
+                {
+                  "Fn::Select": [
+                    3,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                },
+                "/",
+                {
+                  "Ref": "Repository22E53BBD"
+                },
+                ":$TAG\",\n        \"docker push ",
+                {
+                  "Fn::Select": [
+                    4,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".dkr.ecr.",
+                {
+                  "Fn::Select": [
+                    3,
+                    {
+                      "Fn::Split": [
+                        ":",
+                        {
+                          "Fn::GetAtt": [
+                            "Repository22E53BBD",
+                            "Arn"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ".",
+                {
+                  "Ref": "AWS::URLSuffix"
+                },
+                "/",
+                {
+                  "Ref": "Repository22E53BBD"
+                },
+                ":$LATEST\",\n        \"echo \\\"finished ECR push\\\"\",\n        \"echo package coffee serverless lambda function\",\n        \"cd ../coffee-sls\",\n        \"sam package --template-file template.yaml --s3-bucket coffeeshop-49k0gj --output-template-file packaged.yaml\",\n        \"sam deploy --template-file ./packaged.yaml --stack-name coffee-sls --capabilities CAPABILITY_IAM\"\n      ]\n    }\n  }\n}"
+              ]
+            ]
+          },
+          "Location": "https://github.com/humank/EventStormingWorkShop.git",
+          "ReportBuildStatus": true,
+          "Type": "GITHUB"
+        },
+        "Cache": {
+          "Modes": [
+            "LOCAL_DOCKER_LAYER_CACHE",
+            "LOCAL_CUSTOM_CACHE"
+          ],
+          "Type": "LOCAL"
+        },
+        "EncryptionKey": "alias/aws/s3",
+        "Triggers": {
+          "FilterGroups": [
+            [
+              {
+                "Pattern": "PUSH",
+                "Type": "EVENT"
+              },
+              {
+                "Pattern": "refs/heads/master",
+                "Type": "HEAD_REF"
+              }
+            ]
+          ],
+          "Webhook": true
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CodeBuildProject/Resource"
+      }
+    },
+    "ClusterEB0386A7": {
+      "Type": "AWS::ECS::Cluster",
+      "Properties": {
+        "ClusterName": "coffeeshop"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/Cluster/Resource"
+      }
+    },
+    "orderswebTaskTaskRoleB192F1EF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/TaskRole/Resource"
+      }
+    },
+    "orderswebTaskTaskRoleDefaultPolicy0DA70FBE": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "events:*",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "dynamodb:*",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "Order702A5B72",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            },
+            {
+              "Action": "dynamodb:*",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeE126F75C",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            },
+            {
+              "Action": [
+                "ssm:DescribeParameters",
+                "ssm:GetParameters",
+                "ssm:GetParameter",
+                "ssm:GetParameterHistory"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ssm:us-west-2:584518143473:parameter",
+                    {
+                      "Ref": "eventSourceParamCF505C7B"
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ssm:DescribeParameters",
+                "ssm:GetParameters",
+                "ssm:GetParameter",
+                "ssm:GetParameterHistory"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ssm:us-west-2:584518143473:parameter",
+                    {
+                      "Ref": "eventArnParam2D3A232C"
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "orderswebTaskTaskRoleDefaultPolicy0DA70FBE",
+        "Roles": [
+          {
+            "Ref": "orderswebTaskTaskRoleB192F1EF"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/TaskRole/DefaultPolicy/Resource"
+      }
+    },
+    "orderswebTask836C0A2C": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Essential": true,
+            "Image": "amazon/amazon-ecs-sample",
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Ref": "orderswebTaskdefaultContainerLogGroupD3EA3B52"
+                },
+                "awslogs-stream-prefix": "coffeeshop",
+                "awslogs-region": "us-west-2"
+              }
+            },
+            "Name": "defaultContainer",
+            "PortMappings": [
+              {
+                "ContainerPort": 8080,
+                "Protocol": "tcp"
+              }
+            ],
+            "Ulimits": [
+              {
+                "HardLimit": 819200,
+                "Name": "nofile",
+                "SoftLimit": 102400
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "orderswebTaskExecutionRole8AA754CF",
+            "Arn"
+          ]
+        },
+        "Family": "CoffeeShopCodePipelineorderswebTask152D9080",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "orderswebTaskTaskRoleB192F1EF",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/Resource"
+      }
+    },
+    "orderswebTaskdefaultContainerLogGroupD3EA3B52": {
+      "Type": "AWS::Logs::LogGroup",
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/defaultContainer/LogGroup/Resource"
+      }
+    },
+    "orderswebTaskExecutionRole8AA754CF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/ExecutionRole/Resource"
+      }
+    },
+    "orderswebTaskExecutionRoleDefaultPolicyAD1F9B33": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "orderswebTaskdefaultContainerLogGroupD3EA3B52",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "Repository22E53BBD",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "ecr:GetAuthorizationToken",
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "orderswebTaskExecutionRoleDefaultPolicyAD1F9B33",
+        "Roles": [
+          {
+            "Ref": "orderswebTaskExecutionRole8AA754CF"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/orders-web-Task/ExecutionRole/DefaultPolicy/Resource"
+      }
+    },
+    "AlbSvcLB283AF851": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "AlbSvcLBSecurityGroupE09A4D3B",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          {
+            "Ref": "CoffeeShopVPCPublicSubnet1Subnet0AE298EB"
+          },
+          {
+            "Ref": "CoffeeShopVPCPublicSubnet2SubnetA2BB6851"
+          },
+          {
+            "Ref": "CoffeeShopVPCPublicSubnet3Subnet85C1D3B3"
+          }
+        ],
+        "Type": "application"
+      },
+      "DependsOn": [
+        "CoffeeShopVPCPublicSubnet1DefaultRoute3B62852A",
+        "CoffeeShopVPCPublicSubnet2DefaultRouteD25873E9",
+        "CoffeeShopVPCPublicSubnet3DefaultRoute168AB1B9"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/LB/Resource"
+      }
+    },
+    "AlbSvcLBSecurityGroupE09A4D3B": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB CoffeeShopCodePipelineAlbSvcLBDFA1B523",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/LB/SecurityGroup/Resource"
+      }
+    },
+    "AlbSvcLBSecurityGrouptoCoffeeShopCodePipelineAlbSvcServiceSecurityGroup2E4832AC8080A7E8472B": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "AlbSvcLBSecurityGroupE09A4D3B",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "AlbSvcServiceSecurityGroup1BBD7858",
+            "GroupId"
+          ]
+        },
+        "FromPort": 8080,
+        "ToPort": 8080
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/LB/SecurityGroup/to CoffeeShopCodePipelineAlbSvcServiceSecurityGroup2E4832AC:8080"
+      }
+    },
+    "AlbSvcLBPublicListener03524FBB": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "AlbSvcLBPublicListenerECSGroupB7EFC8A8"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "AlbSvcLB283AF851"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/LB/PublicListener/Resource"
+      }
+    },
+    "AlbSvcLBPublicListenerECSGroupB7EFC8A8": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "HealthCheckIntervalSeconds": 5,
+        "HealthCheckTimeoutSeconds": 4,
+        "HealthyThresholdCount": 2,
+        "Matcher": {
+          "HttpCode": "200"
+        },
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetGroupAttributes": [
+          {
+            "Key": "deregistration_delay.timeout_seconds",
+            "Value": "30"
+          }
+        ],
+        "TargetType": "ip",
+        "UnhealthyThresholdCount": 3,
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/LB/PublicListener/ECSGroup/Resource"
+      }
+    },
+    "AlbSvcServiceD2C1E21D": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "ClusterEB0386A7"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 1,
+        "EnableECSManagedTags": false,
+        "HealthCheckGracePeriodSeconds": 60,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "defaultContainer",
+            "ContainerPort": 8080,
+            "TargetGroupArn": {
+              "Ref": "AlbSvcLBPublicListenerECSGroupB7EFC8A8"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "DISABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "AlbSvcServiceSecurityGroup1BBD7858",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              {
+                "Ref": "CoffeeShopVPCPrivateSubnet1Subnet4B6571FA"
+              },
+              {
+                "Ref": "CoffeeShopVPCPrivateSubnet2Subnet9CA4B673"
+              },
+              {
+                "Ref": "CoffeeShopVPCPrivateSubnet3Subnet7ECD5C8A"
+              }
+            ]
+          }
+        },
+        "TaskDefinition": {
+          "Ref": "orderswebTask836C0A2C"
+        }
+      },
+      "DependsOn": [
+        "AlbSvcLBPublicListenerECSGroupB7EFC8A8",
+        "AlbSvcLBPublicListener03524FBB"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/Service/Service"
+      }
+    },
+    "AlbSvcServiceSecurityGroup1BBD7858": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "CoffeeShopCodePipeline/AlbSvc/Service/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": {
+          "Ref": "CoffeeShopVPC7F853AEE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/Service/SecurityGroup/Resource"
+      }
+    },
+    "AlbSvcServiceSecurityGroupfromCoffeeShopCodePipelineAlbSvcLBSecurityGroupCA80C6D280807AA1FB5C": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "FromPort": 8080,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "AlbSvcServiceSecurityGroup1BBD7858",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "AlbSvcLBSecurityGroupE09A4D3B",
+            "GroupId"
+          ]
+        },
+        "ToPort": 8080
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/AlbSvc/Service/SecurityGroup/from CoffeeShopCodePipelineAlbSvcLBSecurityGroupCA80C6D2:8080"
+      }
+    },
+    "Order702A5B72": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "seqNo",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "seqNo",
+            "AttributeType": "N"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "TableName": "Order"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/Order/Resource"
+      }
+    },
+    "CoffeeE126F75C": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "seqNo",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "seqNo",
+            "AttributeType": "N"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "TableName": "Coffee"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/Coffee/Resource"
+      }
+    },
+    "OrderCreatedRule8ABB232A": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "EventPattern": {
+          "source": [
+            "solid.humank.coffeeshop.order"
+          ],
+          "detail-type": [
+            "customevent"
+          ]
+        },
+        "Name": "OrderCreatedRule",
+        "State": "ENABLED"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/OrderCreatedRule/Resource"
+      }
+    },
+    "eventSourceParamCF505C7B": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": "solid.humank.coffeeshop.order",
+        "Name": "/coffeeshop/events/ordercreated/event_source"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/eventSourceParam/Resource"
+      }
+    },
+    "eventArnParam2D3A232C": {
+      "Type": "AWS::SSM::Parameter",
+      "Properties": {
+        "Type": "String",
+        "Value": {
+          "Fn::GetAtt": [
+            "OrderCreatedRule8ABB232A",
+            "Arn"
+          ]
+        },
+        "Name": "/coffeeshop/events/ordercreated/event_arn"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/eventArnParam/Resource"
+      }
+    },
+    "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160": {
+      "Type": "AWS::KMS::Key",
+      "Properties": {
+        "KeyPolicy": {
+          "Statement": [
+            {
+              "Action": [
+                "kms:Create*",
+                "kms:Describe*",
+                "kms:Enable*",
+                "kms:List*",
+                "kms:Put*",
+                "kms:Update*",
+                "kms:Revoke*",
+                "kms:Disable*",
+                "kms:Get*",
+                "kms:Delete*",
+                "kms:ScheduleKeyDeletion",
+                "kms:CancelKeyDeletion",
+                "kms:GenerateDataKey",
+                "kms:TagResource",
+                "kms:UntagResource"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::584518143473:root"
+                    ]
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineRole48A82A35",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRole2D2B6146",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:Decrypt"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineSourceECRCodePipelineActionRole20F0D41D",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineDeployDeployActionCodePipelineActionRole2A253EFB",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/ArtifactsBucketEncryptionKey/Resource"
+      }
+    },
+    "CoffeeShopPipelineArtifactsBucketEncryptionKeyAlias04604E8A": {
+      "Type": "AWS::KMS::Alias",
+      "Properties": {
+        "AliasName": "alias/codepipeline-coffeeshopcodepipelinecoffeeshoppipeline2276f00d",
+        "TargetKeyId": {
+          "Fn::GetAtt": [
+            "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+            "Arn"
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/ArtifactsBucketEncryptionKeyAlias/Resource"
+      }
+    },
+    "CoffeeShopPipelineArtifactsBucketCD86EDE3": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "KMSMasterKeyID": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                    "Arn"
+                  ]
+                },
+                "SSEAlgorithm": "aws:kms"
+              }
+            }
+          ]
+        },
+        "PublicAccessBlockConfiguration": {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/ArtifactsBucket/Resource"
+      }
+    },
+    "CoffeeShopPipelineRole48A82A35": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "codepipeline.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Role/Resource"
+      }
+    },
+    "CoffeeShopPipelineRoleDefaultPolicyBF8CE454": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRole2D2B6146",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineSourceECRCodePipelineActionRole20F0D41D",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineDeployDeployActionCodePipelineActionRole2A253EFB",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CoffeeShopPipelineRoleDefaultPolicyBF8CE454",
+        "Roles": [
+          {
+            "Ref": "CoffeeShopPipelineRole48A82A35"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Role/DefaultPolicy/Resource"
+      }
+    },
+    "CoffeeShopPipeline5BE09743": {
+      "Type": "AWS::CodePipeline::Pipeline",
+      "Properties": {
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "CoffeeShopPipelineRole48A82A35",
+            "Arn"
+          ]
+        },
+        "Stages": [
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
+                  "Category": "Source",
+                  "Owner": "AWS",
+                  "Provider": "CodeCommit",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "RepositoryName": {
+                    "Fn::GetAtt": [
+                      "GitRepoA897C5EB",
+                      "Name"
+                    ]
+                  },
+                  "BranchName": "master",
+                  "PollForSourceChanges": false
+                },
+                "Name": "CodeCommit",
+                "OutputArtifacts": [
+                  {
+                    "Name": "Artifact_Source_CodeCommit"
+                  }
+                ],
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRole2D2B6146",
+                    "Arn"
+                  ]
+                },
+                "RunOrder": 1
+              },
+              {
+                "ActionTypeId": {
+                  "Category": "Source",
+                  "Owner": "AWS",
+                  "Provider": "ECR",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "RepositoryName": {
+                    "Ref": "Repository22E53BBD"
+                  },
+                  "ImageTag": "latest"
+                },
+                "Name": "ECR",
+                "OutputArtifacts": [
+                  {
+                    "Name": "Artifact_Source_ECR"
+                  }
+                ],
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineSourceECRCodePipelineActionRole20F0D41D",
+                    "Arn"
+                  ]
+                },
+                "RunOrder": 1
+              }
+            ],
+            "Name": "Source"
+          },
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
+                  "Category": "Deploy",
+                  "Owner": "AWS",
+                  "Provider": "ECS",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "ClusterName": {
+                    "Ref": "ClusterEB0386A7"
+                  },
+                  "ServiceName": {
+                    "Fn::GetAtt": [
+                      "AlbSvcServiceD2C1E21D",
+                      "Name"
+                    ]
+                  }
+                },
+                "InputArtifacts": [
+                  {
+                    "Name": "Artifact_Source_CodeCommit"
+                  }
+                ],
+                "Name": "DeployAction",
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineDeployDeployActionCodePipelineActionRole2A253EFB",
+                    "Arn"
+                  ]
+                },
+                "RunOrder": 1
+              }
+            ],
+            "Name": "Deploy"
+          }
+        ],
+        "ArtifactStore": {
+          "EncryptionKey": {
+            "Id": {
+              "Fn::GetAtt": [
+                "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                "Arn"
+              ]
+            },
+            "Type": "KMS"
+          },
+          "Location": {
+            "Ref": "CoffeeShopPipelineArtifactsBucketCD86EDE3"
+          },
+          "Type": "S3"
+        },
+        "Name": "CoffeeShopPipeline"
+      },
+      "DependsOn": [
+        "CoffeeShopPipelineRoleDefaultPolicyBF8CE454",
+        "CoffeeShopPipelineRole48A82A35"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Resource"
+      }
+    },
+    "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRole2D2B6146": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::584518143473:root"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Source/CodeCommit/CodePipelineActionRole/Resource"
+      }
+    },
+    "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRoleDefaultPolicyED587C4B": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "codecommit:GetBranch",
+                "codecommit:GetCommit",
+                "codecommit:UploadArchive",
+                "codecommit:GetUploadArchiveStatus",
+                "codecommit:CancelUploadArchive"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "GitRepoA897C5EB",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRoleDefaultPolicyED587C4B",
+        "Roles": [
+          {
+            "Ref": "CoffeeShopPipelineSourceCodeCommitCodePipelineActionRole2D2B6146"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Source/CodeCommit/CodePipelineActionRole/DefaultPolicy/Resource"
+      }
+    },
+    "CoffeeShopPipelineSourceECRCodePipelineActionRole20F0D41D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::584518143473:root"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Source/ECR/CodePipelineActionRole/Resource"
+      }
+    },
+    "CoffeeShopPipelineSourceECRCodePipelineActionRoleDefaultPolicyC1F9729E": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "ecr:DescribeImages",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "Repository22E53BBD",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:Decrypt"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CoffeeShopPipelineSourceECRCodePipelineActionRoleDefaultPolicyC1F9729E",
+        "Roles": [
+          {
+            "Ref": "CoffeeShopPipelineSourceECRCodePipelineActionRole20F0D41D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Source/ECR/CodePipelineActionRole/DefaultPolicy/Resource"
+      }
+    },
+    "CoffeeShopPipelineEventsRole899656A8": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "events.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/EventsRole/Resource"
+      }
+    },
+    "CoffeeShopPipelineEventsRoleDefaultPolicy89933727": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "codepipeline:StartPipelineExecution",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":codepipeline:us-west-2:584518143473:",
+                    {
+                      "Ref": "CoffeeShopPipeline5BE09743"
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CoffeeShopPipelineEventsRoleDefaultPolicy89933727",
+        "Roles": [
+          {
+            "Ref": "CoffeeShopPipelineEventsRole899656A8"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/EventsRole/DefaultPolicy/Resource"
+      }
+    },
+    "CoffeeShopPipelineDeployDeployActionCodePipelineActionRole2A253EFB": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::584518143473:root"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Deploy/DeployAction/CodePipelineActionRole/Resource"
+      }
+    },
+    "CoffeeShopPipelineDeployDeployActionCodePipelineActionRoleDefaultPolicy2557D5C6": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "ecs:DescribeServices",
+                "ecs:DescribeTaskDefinition",
+                "ecs:DescribeTasks",
+                "ecs:ListTasks",
+                "ecs:RegisterTaskDefinition",
+                "ecs:UpdateService"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": "iam:PassRole",
+              "Condition": {
+                "StringEqualsIfExists": {
+                  "iam:PassedToService": [
+                    "ec2.amazonaws.com",
+                    "ecs-tasks.amazonaws.com"
+                  ]
+                }
+              },
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "CoffeeShopPipelineArtifactsBucketCD86EDE3",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "CoffeeShopPipelineArtifactsBucketEncryptionKey9B04B160",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CoffeeShopPipelineDeployDeployActionCodePipelineActionRoleDefaultPolicy2557D5C6",
+        "Roles": [
+          {
+            "Ref": "CoffeeShopPipelineDeployDeployActionCodePipelineActionRole2A253EFB"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CoffeeShopPipeline/Deploy/DeployAction/CodePipelineActionRole/DefaultPolicy/Resource"
+      }
+    },
+    "GitRepoA897C5EB": {
+      "Type": "AWS::CodeCommit::Repository",
+      "Properties": {
+        "RepositoryName": "EventStormingWorkshop"
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/GitRepo/Resource"
+      }
+    },
+    "GitRepoCoffeeShopCodePipelineCoffeeShopPipeline2276F00DEventRule291F572F": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "EventPattern": {
+          "source": [
+            "aws.codecommit"
+          ],
+          "resources": [
+            {
+              "Fn::GetAtt": [
+                "GitRepoA897C5EB",
+                "Arn"
+              ]
+            }
+          ],
+          "detail-type": [
+            "CodeCommit Repository State Change"
+          ],
+          "detail": {
+            "event": [
+              "referenceCreated",
+              "referenceUpdated"
+            ],
+            "referenceName": [
+              "master"
+            ]
+          }
+        },
+        "State": "ENABLED",
+        "Targets": [
+          {
+            "Arn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":codepipeline:us-west-2:584518143473:",
+                  {
+                    "Ref": "CoffeeShopPipeline5BE09743"
+                  }
+                ]
+              ]
+            },
+            "Id": "Target0",
+            "RoleArn": {
+              "Fn::GetAtt": [
+                "CoffeeShopPipelineEventsRole899656A8",
+                "Arn"
+              ]
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/GitRepo/CoffeeShopCodePipelineCoffeeShopPipeline2276F00DEventRule/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE31TyW7bMBD9ltxppu5y6K2OmwRGg1awjdwpaqKMRZECFwWGoH/vkJRsIS1ymjdvHjkbuebfv/H1zQ/x5layam4HaSzw4eCFbNgenAlWAtsa7bwN0rPti/4TfBcSmuMji8cHkJ/58NzJGHoutqwIpUJ5CKWGJL+ivQkejqJUcOWv3MY5I1F4NPoijuB+V0TzW/hH4eFNnFlhsSd4vXinPVjCsyBXMnkbT129tqA9O4AMFv350ZrQpRo+JO5rC879Q+904kcG0vJhD51x6I0959nMHoV7yulIEXLD0Y4MRUuUmahoC0PzSqczGpn7woe7IJvcXUYjk6aCMqCq+FBYc4K8lwnGaijXVgVHs4iBGR6Fa37CC2qcR/ueMdoL1GAX3IOwdRwx2B5lXleGI1OmpkRPpr4MbcaphlUnfNyG45uuo3bSQp+MqO6EElpC9e5qUMJ5lIoUZVKgrnt6Uf8/bXO+hb/UITWsJ82MF/EjZaZHMpe9cEdWnbVoTVXy4fJAE6BluDb+DEt1FcKKFqb5Xpy8mQ47UDRFWs6EkmjCI2tamtovSHuOZqNQpLeVQL5DmrZF/8GbGkemScdP7rZf0w/+yj/dnBziygbtsQW+z/YvXiYoteADAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "CoffeeShopCodePipeline/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "AlbSvcLoadBalancerDNS20AA0F0B": {
+      "Value": {
+        "Fn::GetAtt": [
+          "AlbSvcLB283AF851",
+          "DNSName"
+        ]
+      }
+    },
+    "AlbSvcServiceURL46A1D997": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "AlbSvcLB283AF851",
+                "DNSName"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "ServiceURL": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "AlbSvcLB283AF851",
+                "DNSName"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "StackId": {
+      "Value": {
+        "Ref": "AWS::StackId"
+      }
+    },
+    "StackName": {
+      "Value": "CoffeeShopCodePipeline"
+    },
+    "CodeCommitRepoName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GitRepoA897C5EB",
+          "Name"
+        ]
+      }
+    },
+    "Hint": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "\nCreate a \"imagedefinitions.json\" file and git add/push into CodeCommit repository \"EventStormingWorkshop\" with the following value:\n\n[\n  {\n    \"name\": \"defaultContainer\",\n    \"imageUri\": \"",
+            {
+              "Fn::Select": [
+                4,
+                {
+                  "Fn::Split": [
+                    ":",
+                    {
+                      "Fn::GetAtt": [
+                        "Repository22E53BBD",
+                        "Arn"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            ".dkr.ecr.",
+            {
+              "Fn::Select": [
+                3,
+                {
+                  "Fn::Split": [
+                    ":",
+                    {
+                      "Fn::GetAtt": [
+                        "Repository22E53BBD",
+                        "Arn"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "Repository22E53BBD"
+            },
+            ":latest\"\n  }\n]\n"
+          ]
+        ]
+      }
+    },
+    "CodeBuildProjectName": {
+      "Value": "CodeBuildProject"
+    },
+    "Bucket": {
+      "Value": {
+        "Ref": "CoffeeShopBucketEF3ADD55"
+      }
+    }
+  }
+}
