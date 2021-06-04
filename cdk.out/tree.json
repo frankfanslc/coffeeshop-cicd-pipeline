@@ -9,7 +9,7 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "@aws-cdk/core.Construct",
-          "version": "1.95.1"
+          "version": "1.107.0"
         }
       },
       "CoffeeShopCodePipeline": {
@@ -40,7 +40,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.CfnVPC",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PublicSubnet1": {
@@ -77,7 +77,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -85,7 +85,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet1/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -107,7 +107,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -126,7 +126,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -146,7 +146,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "EIP": {
@@ -166,7 +166,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnEIP",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "NATGateway": {
@@ -194,13 +194,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnNatGateway",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PublicSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PublicSubnet2": {
@@ -237,7 +237,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -245,7 +245,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet2/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -267,7 +267,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -286,7 +286,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -306,13 +306,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PublicSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PublicSubnet3": {
@@ -349,7 +349,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -357,7 +357,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PublicSubnet3/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -379,7 +379,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -398,7 +398,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -418,13 +418,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PublicSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PrivateSubnet1": {
@@ -461,7 +461,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -469,7 +469,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet1/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -491,7 +491,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -510,7 +510,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -530,13 +530,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PrivateSubnet2": {
@@ -573,7 +573,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -581,7 +581,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet2/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -603,7 +603,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -622,7 +622,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -642,13 +642,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "PrivateSubnet3": {
@@ -685,7 +685,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnet",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Acl": {
@@ -693,7 +693,7 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopVPC/PrivateSubnet3/Acl",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTable": {
@@ -715,7 +715,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRouteTable",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "RouteTableAssociation": {
@@ -734,7 +734,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnSubnetRouteTableAssociation",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultRoute": {
@@ -754,13 +754,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.CfnRoute",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.PrivateSubnet",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "IGW": {
@@ -779,7 +779,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.CfnInternetGateway",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "VPCGW": {
@@ -798,13 +798,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ec2.CfnVPCGatewayAttachment",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ec2.Vpc",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Repository": {
@@ -825,7 +825,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ecr.CfnRepository",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "CoffeeShopCodePipelineCoffeeShopPipeline2276F00DSourceEventRule": {
@@ -892,19 +892,19 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-events.CfnRule",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-events.Rule",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ecr.Repository",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CodeBuildIamRole": {
@@ -959,7 +959,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.CfnRole",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "DefaultPolicy": {
@@ -1201,19 +1201,19 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.Policy",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-iam.Role",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CoffeeShopBucket": {
@@ -1226,12 +1226,12 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                   "aws:cdk:cloudformation:props": {
-                    "bucketName": "coffeeshop-49k0gj"
+                    "bucketName": "coffeeshop-j3iqr"
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-s3.CfnBucket",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Notifications": {
@@ -1239,13 +1239,13 @@
                 "path": "CoffeeShopCodePipeline/CoffeeShopBucket/Notifications",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Construct",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-s3.Bucket",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CodeBuildProject": {
@@ -1492,7 +1492,7 @@
                             {
                               "Ref": "Repository22E53BBD"
                             },
-                            ":$LATEST\",\n        \"echo \\\"finished ECR push\\\"\",\n        \"echo package coffee serverless lambda function\",\n        \"cd ../coffee-sls\",\n        \"sam package --template-file template.yaml --s3-bucket coffeeshop-49k0gj --output-template-file packaged.yaml\",\n        \"sam deploy --template-file ./packaged.yaml --stack-name coffee-sls --capabilities CAPABILITY_IAM\"\n      ]\n    }\n  }\n}"
+                            ":$LATEST\",\n        \"echo \\\"finished ECR push\\\"\",\n        \"echo package coffee serverless lambda function\",\n        \"cd ../coffee-sls\",\n        \"sam package --template-file template.yaml --s3-bucket coffeeshop-j3iqr --output-template-file packaged.yaml\",\n        \"sam deploy --template-file ./packaged.yaml --stack-name coffee-sls --capabilities CAPABILITY_IAM\"\n      ]\n    }\n  }\n}"
                           ]
                         ]
                       }
@@ -1524,13 +1524,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-codebuild.CfnProject",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-codebuild.Project",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Cluster": {
@@ -1548,13 +1548,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ecs.CfnCluster",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ecs.Cluster",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "orders-web-Task": {
@@ -1587,7 +1587,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultPolicy": {
@@ -1698,19 +1698,19 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.Policy",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Resource": {
@@ -1772,7 +1772,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ecs.CfnTaskDefinition",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "defaultContainer": {
@@ -1792,19 +1792,19 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-logs.LogGroup",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ecs.ContainerDefinition",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ExecutionRole": {
@@ -1833,7 +1833,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultPolicy": {
@@ -1893,25 +1893,25 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.Policy",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ecs.TaskDefinition",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "AlbSvc": {
@@ -1959,7 +1959,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnLoadBalancer",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "SecurityGroup": {
@@ -1989,7 +1989,7 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       },
                       "to CoffeeShopCodePipelineAlbSvcServiceSecurityGroup2E4832AC:8080": {
@@ -2018,13 +2018,13 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupEgress",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "PublicListener": {
@@ -2054,7 +2054,7 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnListener",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       },
                       "ECSGroup": {
@@ -2090,25 +2090,25 @@
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-elasticloadbalancingv2.CfnTargetGroup",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationListener",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-elasticloadbalancingv2.ApplicationLoadBalancer",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "LoadBalancerDNS": {
@@ -2116,7 +2116,7 @@
                 "path": "CoffeeShopCodePipeline/AlbSvc/LoadBalancerDNS",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnOutput",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ServiceURL": {
@@ -2124,7 +2124,7 @@
                 "path": "CoffeeShopCodePipeline/AlbSvc/ServiceURL",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnOutput",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Service": {
@@ -2188,7 +2188,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ecs.CfnService",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "SecurityGroup": {
@@ -2216,7 +2216,7 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       },
                       "from CoffeeShopCodePipelineAlbSvcLBSecurityGroupCA80C6D2:8080": {
@@ -2245,25 +2245,25 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ecs.FargateService",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ecs-patterns.ApplicationLoadBalancedFargateService",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Order": {
@@ -2294,7 +2294,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-dynamodb.CfnTable",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ScalingRole": {
@@ -2302,13 +2302,13 @@
                 "path": "CoffeeShopCodePipeline/Order/ScalingRole",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-dynamodb.Table",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Coffee": {
@@ -2339,7 +2339,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-dynamodb.CfnTable",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ScalingRole": {
@@ -2347,13 +2347,13 @@
                 "path": "CoffeeShopCodePipeline/Coffee/ScalingRole",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-dynamodb.Table",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "OrderCreatedRule": {
@@ -2380,13 +2380,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-events.CfnRule",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-events.Rule",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "eventSourceParam": {
@@ -2406,13 +2406,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ssm.CfnParameter",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ssm.StringParameter",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "eventArnParam": {
@@ -2437,13 +2437,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-ssm.CfnParameter",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-ssm.StringParameter",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CoffeeShopPipeline": {
@@ -2576,13 +2576,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-kms.CfnKey",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-kms.Key",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ArtifactsBucketEncryptionKeyAlias": {
@@ -2606,13 +2606,13 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-kms.CfnAlias",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-kms.Alias",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "ArtifactsBucket": {
@@ -2650,7 +2650,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-s3.CfnBucket",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "Notifications": {
@@ -2658,13 +2658,13 @@
                     "path": "CoffeeShopCodePipeline/CoffeeShopPipeline/ArtifactsBucket/Notifications",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Construct",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-s3.Bucket",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Role": {
@@ -2693,7 +2693,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultPolicy": {
@@ -2800,19 +2800,19 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.Policy",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Resource": {
@@ -2949,7 +2949,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-codepipeline.CfnPipeline",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Source": {
@@ -2997,7 +2997,7 @@
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.CfnRole",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           },
                           "DefaultPolicy": {
@@ -3090,25 +3090,25 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                                  "version": "1.95.1"
+                                  "version": "1.107.0"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.Policy",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.Role",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Construct",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "ECR": {
@@ -3152,7 +3152,7 @@
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.CfnRole",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           },
                           "DefaultPolicy": {
@@ -3235,31 +3235,31 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                                  "version": "1.95.1"
+                                  "version": "1.107.0"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.Policy",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.Role",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Construct",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Construct",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "EventsRole": {
@@ -3288,7 +3288,7 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   },
                   "DefaultPolicy": {
@@ -3335,19 +3335,19 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.Policy",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "Deploy": {
@@ -3395,7 +3395,7 @@
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.CfnRole",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           },
                           "DefaultPolicy": {
@@ -3491,37 +3491,37 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "@aws-cdk/aws-iam.CfnPolicy",
-                                  "version": "1.95.1"
+                                  "version": "1.107.0"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-iam.Policy",
-                              "version": "1.95.1"
+                              "version": "1.107.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-iam.Role",
-                          "version": "1.95.1"
+                          "version": "1.107.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Construct",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Construct",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-codepipeline.Pipeline",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "GitRepo": {
@@ -3539,7 +3539,7 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-codecommit.CfnRepository",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               },
               "CoffeeShopCodePipelineCoffeeShopPipeline2276F00DEventRule": {
@@ -3608,19 +3608,19 @@
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-events.CfnRule",
-                      "version": "1.95.1"
+                      "version": "1.107.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-events.Rule",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-codecommit.Repository",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "ServiceURL": {
@@ -3628,7 +3628,7 @@
             "path": "CoffeeShopCodePipeline/ServiceURL",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "StackId": {
@@ -3636,7 +3636,7 @@
             "path": "CoffeeShopCodePipeline/StackId",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "StackName": {
@@ -3644,7 +3644,7 @@
             "path": "CoffeeShopCodePipeline/StackName",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CodeCommitRepoName": {
@@ -3652,7 +3652,7 @@
             "path": "CoffeeShopCodePipeline/CodeCommitRepoName",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Hint": {
@@ -3660,7 +3660,7 @@
             "path": "CoffeeShopCodePipeline/Hint",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CodeBuildProjectName": {
@@ -3668,7 +3668,7 @@
             "path": "CoffeeShopCodePipeline/CodeBuildProjectName",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "Bucket": {
@@ -3676,7 +3676,7 @@
             "path": "CoffeeShopCodePipeline/Bucket",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           },
           "CDKMetadata": {
@@ -3688,25 +3688,25 @@
                 "path": "CoffeeShopCodePipeline/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnResource",
-                  "version": "1.95.1"
+                  "version": "1.107.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/core.Construct",
-              "version": "1.95.1"
+              "version": "1.107.0"
             }
           }
         },
         "constructInfo": {
           "fqn": "@aws-cdk/core.Stack",
-          "version": "1.95.1"
+          "version": "1.107.0"
         }
       }
     },
     "constructInfo": {
       "fqn": "@aws-cdk/core.App",
-      "version": "1.95.1"
+      "version": "1.107.0"
     }
   }
 }

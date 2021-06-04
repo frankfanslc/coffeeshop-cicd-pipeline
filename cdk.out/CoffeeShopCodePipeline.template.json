@@ -891,7 +891,7 @@
     "CoffeeShopBucketEF3ADD55": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
-        "BucketName": "coffeeshop-49k0gj"
+        "BucketName": "coffeeshop-j3iqr"
       },
       "UpdateReplacePolicy": "Retain",
       "DeletionPolicy": "Retain",
@@ -1133,7 +1133,7 @@
                 {
                   "Ref": "Repository22E53BBD"
                 },
-                ":$LATEST\",\n        \"echo \\\"finished ECR push\\\"\",\n        \"echo package coffee serverless lambda function\",\n        \"cd ../coffee-sls\",\n        \"sam package --template-file template.yaml --s3-bucket coffeeshop-49k0gj --output-template-file packaged.yaml\",\n        \"sam deploy --template-file ./packaged.yaml --stack-name coffee-sls --capabilities CAPABILITY_IAM\"\n      ]\n    }\n  }\n}"
+                ":$LATEST\",\n        \"echo \\\"finished ECR push\\\"\",\n        \"echo package coffee serverless lambda function\",\n        \"cd ../coffee-sls\",\n        \"sam package --template-file template.yaml --s3-bucket coffeeshop-j3iqr --output-template-file packaged.yaml\",\n        \"sam deploy --template-file ./packaged.yaml --stack-name coffee-sls --capabilities CAPABILITY_IAM\"\n      ]\n    }\n  }\n}"
               ]
             ]
           },
@@ -2656,7 +2656,7 @@
     "CDKMetadata": {
       "Type": "AWS::CDK::Metadata",
       "Properties": {
-        "Analytics": "v2:deflate64:H4sIAAAAAAAAE31TyW7bMBD9ltxppu5y6K2OmwRGg1awjdwpaqKMRZECFwWGoH/vkJRsIS1ymjdvHjkbuebfv/H1zQ/x5layam4HaSzw4eCFbNgenAlWAtsa7bwN0rPti/4TfBcSmuMji8cHkJ/58NzJGHoutqwIpUJ5CKWGJL+ivQkejqJUcOWv3MY5I1F4NPoijuB+V0TzW/hH4eFNnFlhsSd4vXinPVjCsyBXMnkbT129tqA9O4AMFv350ZrQpRo+JO5rC879Q+904kcG0vJhD51x6I0959nMHoV7yulIEXLD0Y4MRUuUmahoC0PzSqczGpn7woe7IJvcXUYjk6aCMqCq+FBYc4K8lwnGaijXVgVHs4iBGR6Fa37CC2qcR/ueMdoL1GAX3IOwdRwx2B5lXleGI1OmpkRPpr4MbcaphlUnfNyG45uuo3bSQp+MqO6EElpC9e5qUMJ5lIoUZVKgrnt6Uf8/bXO+hb/UITWsJ82MF/EjZaZHMpe9cEdWnbVoTVXy4fJAE6BluDb+DEt1FcKKFqb5Xpy8mQ47UDRFWs6EkmjCI2tamtovSHuOZqNQpLeVQL5DmrZF/8GbGkemScdP7rZf0w/+yj/dnBziygbtsQW+z/YvXiYoteADAAA="
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE31Ty27bMBD8lt5pJm6A9lrHTQIjQSvYRu4UtVHXkkiBDwWGwH/vkpRsIS1y2tnZIfdFrvn69ju//fJDvNuVrJqbUWoDfDw4IRu2B6u9kcC2WllnvHRs+6Z+e9f7hOZ4YPH4CPIrH197GUOvxZYVvmxRHnypIMmvaK+9g6MoW7jyV25jrZYoHGp1EUfwsCui+SXck3DwLs6sMDgQvF68Uw4M4VmQK5m8jaOu/nSgHDuA9Abd+clo36caPiUeagPW/kPvVOIDA2n4uIdeW3TanPNsZo/CA+W0pPC54WgDQ9ERpScq2kLTvNLpjAKzd3y897LJ3WUUmNQVlB7bio+F0SfIe5lgrIZybVtvaRYxMMOjsM1PeEOF82g/Mlo5gQrMgnsUpo4jBjOgzOvKMLBW15ToRdeXoc041bDqhYvbsHzT99ROWuiLFtW9aIWSUH24GlphHcqWFGVSoKoHelH/P21yvoW/1CE1rCbNjBfxI2WmRzKXvXADq85KdLoq+Xh5oAnQMmwXf4ahugphRAfTfC9O3kyPPbQ0RVrOhJJowoE1HU3tGdKeo9m0KNLbSiDfIXXXofvkTYXAFOn4yd4M62/8jv7wySKujFcOO+D7bP8Ct9h0cOADAAA="
       },
       "Metadata": {
         "aws:cdk:path": "CoffeeShopCodePipeline/CDKMetadata/Default"
